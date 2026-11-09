@@ -17,7 +17,7 @@ async function start() {
     pool = setupPgMem();
     console.log('🌱 Pre-seeding in-memory database with demo data (demo@sweety.com / Demo@1234)...');
     try {
-      await seed();
+      await seed({ keepOpen: true });
       console.log('✅ In-memory database ready with 2 months sample readings.');
     } catch (seedErr) {
       console.error('Seed warning:', seedErr.message);

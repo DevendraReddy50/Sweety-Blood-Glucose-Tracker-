@@ -27,7 +27,7 @@ function formatDate(date) {
   return `${y}-${m}-${d}`;
 }
 
-async function seed() {
+async function seed(options = {}) {
   console.log('🌱 Starting Sweety database seed...');
   const pool = getPool();
 
@@ -98,9 +98,14 @@ async function seed() {
     console.log('----------------------------------------------------');
   } catch (err) {
     console.error('❌ Seeding failed:', err);
-    process.exit(1);
+    if (!options.keepOpen) {
+      process.exit(1);
+    }
+    throw err;
   } finally {
-    await close();
+    if (!options.keepOpen) {
+      await close();
+    }
   }
 }
 
