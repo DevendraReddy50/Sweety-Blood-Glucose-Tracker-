@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const authRoutes = require('./routes/authRoutes');
 const readingsRoutes = require('./routes/readingsRoutes');
+const reportsRoutes = require('./routes/reportsRoutes');
 const errorHandler = require('./middleware/errorHandler');
 
 const app = express();
@@ -18,9 +19,10 @@ app.get('/api/health', (req, res) => {
   res.status(200).json({ status: 'ok', timestamp: new Date().toISOString() });
 });
 
-// Auth & Readings Routes
+// App Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/readings', readingsRoutes);
+app.use('/api/reports', reportsRoutes);
 
 // Central Error Handler
 app.use(errorHandler);
