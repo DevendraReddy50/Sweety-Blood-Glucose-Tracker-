@@ -30,6 +30,22 @@ function setupPgMem() {
     implementation: () => crypto.randomUUID(),
   });
 
+  // Support to_char function
+  memDb.public.registerFunction({
+    name: 'to_char',
+    args: [DataType.date, DataType.text],
+    returns: DataType.text,
+    implementation: (d, fmt) => {
+      if (!d) return null;
+      if (typeof d === 'string') return d.slice(0, 10);
+      const dateObj = new Date(d);
+      const y = dateObj.getFullYear();
+      const m = String(dateObj.getMonth() + 1).padStart(2, '0');
+      const day = String(dateObj.getDate()).padStart(2, '0');
+      return `${y}-${m}-${day}`;
+    },
+  });
+
   // Apply initial migration
   const migrationPath = path.resolve(__dirname, '../migrations/001_init.sql');
   const migrationSql = fs.readFileSync(migrationPath, 'utf8');
