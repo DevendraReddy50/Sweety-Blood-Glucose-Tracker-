@@ -1,0 +1,25 @@
+{
+  "name": "sweety-blood-glucose-tracker",
+  "version": "1.0.0",
+  "description": "Sweety - Full-stack Blood Glucose Tracker",
+  "scripts": {
+    "install:all": "npm --prefix server install && npm --prefix client install",
+    "seed": "npm --prefix server run seed",
+    "migrate": "npm --prefix server run migrate",
+    "test": "npm --prefix server test",
+    "server": "npm --prefix server start",
+    "server:dev": "npm --prefix server run dev",
+    "client": "npm --prefix client dev",
+    "dev": "npm run server:dev"
+  },
+  "keywords": [
+    "blood-glucose",
+    "tracker",
+    "express",
+    "react",
+    "postgres",
+    "jwt"
+  ],
+  "author": "Devendra Reddy",
+  "license": "ISC"
+}
