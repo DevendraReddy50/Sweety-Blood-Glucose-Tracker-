@@ -368,3 +368,5 @@ Time:        10.347 s
 - **Insulin & Carb Logging:** Add optional companion fields for tracking insulin dosage (units) and carbohydrate intake (grams) for each slot.
 - **Push & Email Reminders:** Web Push or email notifications for slots that have not been logged by designated times (e.g., fasting reading reminder at 8:00 AM).
 - **Refresh Tokens & Secure HttpOnly Cookies:** Transition JWT storage from `localStorage` to `HttpOnly`, `SameSite=Strict` cookies with a rotating refresh token mechanism.
+#   S w e e t y - B l o o d - G l u c o s e - T r a c k e r -  
+ 
