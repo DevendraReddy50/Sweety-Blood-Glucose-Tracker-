@@ -64,6 +64,40 @@ A full-stack web application designed for tracking, managing, and analyzing dail
    - **Interactive Recharts Visualization:** Dynamic month-to-date blood glucose trend line chart with target threshold guides (70–140 mg/dl).
    - **Docker Compose:** Pre-configured `docker-compose.yml` for instant PostgreSQL startup.
 
+## 📸 Screenshots
+
+| 1. Authentication (Login / Register) | 2. Dashboard & Readings List |
+| :---: | :---: |
+| ![Login Page](./screenshots/01_login_page.png) | ![Dashboard Page](./screenshots/02_dashboard_page.png) |
+| *One-click "Fill Demo" shortcut with instant JWT auth* | *Color-coded glucose badges & paginated history* |
+
+| 3. Readings CRUD Modal | 4. Reports & Monthly Trend Chart |
+| :---: | :---: |
+| ![Reading Modal](./screenshots/03_reading_modal.png) | ![Reports Page](./screenshots/04_reports_page.png) |
+| *Strict validation (40–600 mg/dl, slot & future date checks)* | *Daily, MTD & Previous Month stats + Recharts trendline* |
+
+---
+
+## 📹 Suggested 2–3 Minute Video Walkthrough Outline
+
+For submission screen recordings (Loom, OBS, or ScreenStudio):
+1. **Introduction & Login (0:00 – 0:30):**
+   - Open `http://localhost:5173/`. Click **"Fill Demo"** button (`demo@sweety.com` / `Demo@1234`) and sign in.
+2. **Dashboard & Readings CRUD (0:30 – 1:15):**
+   - Show the readings list with color-coded glucose badges (Normal, Elevated, High, Low).
+   - Click **"Log Reading"** to open the modal.
+   - Demonstrate validation by typing an invalid value (e.g. `35` or `650`) to show inline error message.
+   - Submit a valid reading (e.g. `118` mg/dl).
+   - Edit and delete a reading to show real-time table update.
+   - Show pagination controls at the bottom (`Showing 1–20 of 170+ readings`).
+3. **Reports & Analytics (1:15 – 2:00):**
+   - Navigate to the **Reports** tab.
+   - Show the 3 report cards: **Daily** (with slot breakdown), **Month-to-Date (MTD)**, and **Previous Month** (with previous month's label).
+   - Change the date using the date picker or click **"Yesterday"** to show instant recalculation.
+   - Showcase the interactive **Recharts monthly trend chart** with 70–140 mg/dl target reference lines.
+4. **Backend Code & Tests (2:00 – 2:30):**
+   - Switch to terminal and run `npm test`. Show all 35 tests passing cleanly across the 6 test suites.
+
 ---
 
 ## 📁 Project Layout
@@ -137,6 +171,19 @@ project fullstack/
 ---
 
 ## 🚀 Installation & Quick Start
+
+### 0. Push to Your Public GitHub Repository
+To link this codebase to your own public GitHub repository:
+```bash
+# 1. Create a new public repository on GitHub (e.g. sweety-blood-glucose-tracker)
+# 2. Add remote origin and push all commits:
+git remote add origin https://github.com/<YOUR-GITHUB-USERNAME>/<YOUR-REPO-NAME>.git
+git branch -M main
+git push -u origin main
+```
+The repository already contains clean, atomic conventional commits tracing the step-by-step development history (`feat: auth routes`, `feat: readings validation`, etc.).
+
+---
 
 ### 1. Prerequisites
 - Node.js 18+ (tested on Node v24)
