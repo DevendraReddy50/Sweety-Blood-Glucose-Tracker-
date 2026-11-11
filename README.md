@@ -59,11 +59,7 @@ Run backend tests with `npm test` from the project root. Tests use pg-mem and do
 | --- | --- |
 | ![Reading form](./screenshots/03_reading_modal.png) | ![Reports and chart](./screenshots/04_reports_page.png) |
 
-| Backend API health | |
-| --- | --- |
-| ![API health endpoint](./screenshots/05_backend_health.png) | |
-
-These screenshots were captured from the running app; the backend image shows the API health response. A live screen recording can be added when captured.
+These screenshots were captured from the running app. A live screen recording can be added when captured.
 
 ## Environment variables
 
